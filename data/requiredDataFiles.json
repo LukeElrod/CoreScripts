@@ -10,4 +10,8 @@
     {"Morrowind.esm": ["0x7B6AF5B9", "0x34282D67"]},
     {"Tribunal.esm": ["0xF481F334", "0x211329EF"]},
     {"Bloodmoon.esm": ["0x43DD2132", "0x9EB62F26"]}
+    {"Tamriel_Data.esm": ["0x676D1544"]},
+    {"TR_Mainland.esm": ["0xEAE0D169"]},
+    {"Balmora Castle Home.ESP": ["0xD66F8AFC"]},
+    {"Patch for Purists.esm": ["0x81362B3F"]},
 ]

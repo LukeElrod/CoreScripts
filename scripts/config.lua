@@ -15,7 +15,7 @@ config.maxClientsPerIP = 3
 -- The difficulty level used by default
 -- Note: In OpenMW, the difficulty slider goes between -100 and 100, with 0 as the default,
 --       though you can use any integer value here
-config.difficulty = 0
+config.difficulty = 25
 
 -- The game settings to enforce for players
 -- Note 1: Anything from OpenMW's game settings can be added here, which means anything listed
@@ -23,19 +23,22 @@ config.difficulty = 0
 -- Note 2: Some settings, such as "difficulty" and "actors processing range", cannot be
 --         changed from here
 config.gameSettings = {
-    { name = "best attack", value = false },
+    { name = "best attack", value = true },
+    { name = "show enchant chance", value = true },
     { name = "prevent merchant equipping", value = false },
     { name = "enchanted weapons are magical", value = true },
-    { name = "rebalance soul gem values", value = false },
+    { name = "rebalance soul gem values", value = true },
     { name = "barter disposition change is permanent", value = false },
     { name = "strength influences hand to hand", value = 0 },
     { name = "use magic item animations", value = false },
     { name = "normalise race speed", value = false },
     { name = "uncapped damage fatigue", value = false },
-    { name = "NPCs avoid collisions", value = false },
+    { name = "NPCs avoid collisions", value = true },
     { name = "swim upward correction", value = false },
     { name = "trainers training skills based on base skill", value = true },
-    { name = "always allow stealing from knocked out actors", value = false }
+    { name = "always allow stealing from knocked out actors", value = false },
+    { name = "followers attack on sight", value = true },
+    { name = "show owned", value = 1 },
 }
 
 -- The VR settings to enforce for players
@@ -110,7 +113,7 @@ config.shareBounty = false
 config.shareReputation = true
 
 -- Whether map exploration should be shared across players on the server or not
-config.shareMapExploration = false
+config.shareMapExploration = true
 
 -- Whether ingame videos should be played for other players when triggered by one player
 config.shareVideos = true
@@ -191,24 +194,24 @@ config.respawnAtTribunalTemple = true
 config.forbiddenCells = { "ToddTest" }
 
 -- The maximum value that any attribute except Speed is allowed to have
-config.maxAttributeValue = 200
+config.maxAttributeValue = 2147483647
 
 -- The maximum value that Speed is allowed to have
 -- Note: Speed is given special treatment because of the Boots of Blinding Speed
-config.maxSpeedValue = 365
+config.maxSpeedValue = 2147483647
 
 -- The maximum value that any skill except Acrobatics is allowed to have
-config.maxSkillValue = 200
+config.maxSkillValue = 2147483647
 
 -- The maximum value that Acrobatics is allowed to have
 -- Note: Acrobatics is given special treatment because of the Scroll of Icarian Flight
-config.maxAcrobaticsValue = 1200
+config.maxAcrobaticsValue = 2147483647
 
 -- Allow modifier values to bypass allowed skill values
-config.ignoreModifierWithMaxSkill = false
+config.ignoreModifierWithMaxSkill = true
 
 -- The refIds of items that players are not allowed to equip for balancing reasons
-config.bannedEquipmentItems = { "helseth's ring" }
+config.bannedEquipmentItems = { }
 
 -- Whether players should respawn when dying
 config.playersRespawn = true
@@ -217,7 +220,7 @@ config.playersRespawn = true
 config.deathTime = 5
 
 -- The number of days spent in jail as a penalty for dying, when respawning
-config.deathPenaltyJailDays = 5
+config.deathPenaltyJailDays = 0
 
 -- Whether players' bounties are reset to 0 after dying
 config.bountyResetOnDeath = false
@@ -461,8 +464,7 @@ config.databasePath = config.dataPath .. "/database.db" -- Path where database i
 
 -- Disallow players from including the following in their own names or the names of their custom items
 -- Note: Unfortunately, these are based on real names that trolls have been using on servers
-config.disallowedNameStrings = { "bitch", "blowjob", "blow job", "cocksuck", "cunt", "ejaculat",
-    "faggot", "fellatio", "fuck", "gas the ", "Hitler", "jizz", "nigga", "nigger", "smegma", "vagina", "whore" }
+config.disallowedNameStrings = { }
 
 -- The order in which table keys should be saved to JSON files
 config.playerKeyOrder = { "login", "name", "passwordHash", "passwordSalt", "timestamps", "settings",
@@ -488,3 +490,4 @@ config.worldKeyOrder = { "general", "time", "topics", "kills", "journal", "custo
     "index", "quest", "actorRefId", "year", "month", "day", "hour", "daysPassed", "timeScale" }
 
 return config
+
