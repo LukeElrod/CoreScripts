@@ -25,7 +25,7 @@ config.difficulty = 25
 config.gameSettings = {
     { name = "best attack", value = true },
     { name = "show enchant chance", value = true },
-    { name = "prevent merchant equipping", value = false },
+    { name = "prevent merchant equipping", value = true },
     { name = "enchanted weapons are magical", value = true },
     { name = "rebalance soul gem values", value = true },
     { name = "barter disposition change is permanent", value = false },
